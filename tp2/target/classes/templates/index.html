@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<table>
+    <thead>
+    <tr>
+        <td>Ref</td>
+        <td>Name</td>
+        <td>Email</td>
+    </tr>
+
+    </thead>
+
+    <tbody>
+    <tr th:each="creator:${listCreators}">
+        <td > <a th:href="@{detailsCreator(id=${creator.getId()})}"
+                 th:text="${creator.getId()}"></a></td>
+        <td th:text="${creator.getName()}"></td>
+        <td th:text="${creator.getEmail()}"></td>
+    </tr>
+    </tbody>
+
+</table>
+
+
+</body>
+</html>
